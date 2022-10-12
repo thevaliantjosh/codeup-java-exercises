@@ -57,8 +57,8 @@ public class ConsoleIOLecture {
         //We also specify System.in for the source of the scanner
         //The System.in refers to information a user types into the console, as opposed to a text file
         //
-        Scanner scanner = new Scanner(System.in);//System.in is an InputStream
-
+//        Scanner scanner = new Scanner(System.in);//System.in is an InputStream
+        Scanner scanner = new Scanner(System.in);//Used Scanner then tab to import
         System.out.println("Enter a number: ");
 //        int userNumber = Integer.parseInt(scanner.nextLine());
         int userNumber = scanner.nextInt();
@@ -86,17 +86,30 @@ public class ConsoleIOLecture {
 
 
 
-//        //Declarations
-//        Scanner in = new Scanner(System.in);
-//        int integer;
-//        long longInteger;
-//        float realNumber;
-//        double doubleReal;
-//        String string1;
-//        String string2;
-//
-//        //Prompts
-//        System.out.println("Enter and integer,");
+        //Declarations
+        Scanner in = new Scanner(System.in);
+        int integer;
+        long longInteger;
+        float realNumber;
+        double doubleReal;
+        String string1;
+        String string2;
+
+        //Prompts
+        System.out.println("Enter an integer, a long integer,\n a floating point number \n another floating-point number, \n and a string. \n Seprate Each with a blank or return");
+
+        //Read in values
+        integer = in.nextInt();
+        longInteger = in.nextLong();
+        realNumber = in.nextFloat();
+        string1 = in.nextLine();
+        System.out.println("Now Enter another value.");
+        string2 = in.next();
+
+
+        System.out.printf("Here is what you entered: %d%n %d%n %03.3f%n %s %s", integer, longInteger, realNumber, string1, string2);
+
+
 
 
 
