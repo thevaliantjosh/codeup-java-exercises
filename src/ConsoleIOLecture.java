@@ -96,18 +96,20 @@ public class ConsoleIOLecture {
         String string2;
 
         //Prompts
-        System.out.println("Enter an integer, a long integer,\n a floating point number \n another floating-point number, \n and a string. \n Seprate Each with a blank or return");
+        System.out.println("Enter an integer, a long integer,\n a floating point number \n another floating-point number, \n and a string. \n Separate Each with a blank or return");
 
         //Read in values
         integer = in.nextInt();
         longInteger = in.nextLong();
         realNumber = in.nextFloat();
+        doubleReal = in.nextDouble();
+        in.nextLine();
         string1 = in.nextLine();
-        System.out.println("Now Enter another value.");
-        string2 = in.next();
+        System.out.println("Now Enter another word.");
+        string2 = in.nextLine();
 
 
-        System.out.printf("Here is what you entered: %d%n %d%n %03.3f%n %s %s", integer, longInteger, realNumber, string1, string2);
+        System.out.printf("Here is what you entered: %n integer: %d%n Long Integer: %d%n Floating Point Number:  %03.3f%n Double Floating Point number: %4.6f%n First Words: %s%n Second Words: %s%n", integer, longInteger, realNumber, doubleReal, string1, string2);
 
 
 
