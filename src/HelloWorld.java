@@ -61,6 +61,24 @@ public class HelloWorld {
         maximumInteger++;
         System.out.println(maximumInteger);
 
+        int x = 4;
+        x++;
+        System.out.println(x);
+
+        int a = 3;
+        int b = 4;
+        b *= a;
+        System.out.println(b);
+
+        int c = 10;
+        int d = 2;
+//        c /=  d;
+//        System.out.println(c);
+//        d -= c;
+//        System.out.println(d);
+        d -= (c / d);
+        System.out.println(d);
+
 
 
     }
