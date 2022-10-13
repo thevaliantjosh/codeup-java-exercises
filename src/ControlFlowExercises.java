@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
         //1. Loop Basics
@@ -76,6 +78,25 @@ public class ControlFlowExercises {
                 System.out.println(s);
             }
         }
+
+        System.out.println("What number would you like to go to?");
+
+        Scanner in = new Scanner(System.in);
+        int usersNumber;
+        usersNumber = in.nextInt();
+//        System.out.println("What number Would you like to go to?");
+
+        for(int t = 1; t <= usersNumber; t++){
+            int squared = t*t;
+            int cubed = t*t*t;
+            if(t == 1){
+                System.out.println("number  |  squared  |  cubed\n ------ | --------  | ----- ");
+                System.out.printf("%-8d| %-10d| %-8d ", t, squared, cubed);
+            } else {
+                System.out.printf("%n%-8d| %-10d| %-8d ", t, squared, cubed);
+            }
+        }
+
 
     }
 }
