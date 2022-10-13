@@ -79,24 +79,87 @@ public class ControlFlowExercises {
             }
         }
 
-        System.out.println("What number would you like to go to?");
+
+
+//Asking the user for a number than printing a table up to the users number
+        //With a column for the number
+        //a column for squared
+        //and a column for cubed
+        //The users is than asked if they would like to continue
+        //if any key other than "n" is pressed it will prompt for a new number
+        //if n is pressed it breaks the loop
 
         Scanner in = new Scanner(System.in);
-        int usersNumber;
-        usersNumber = in.nextInt();
-//        System.out.println("What number Would you like to go to?");
 
-        for(int t = 1; t <= usersNumber; t++){
-            int squared = t*t;
-            int cubed = t*t*t;
-            if(t == 1){
-                System.out.println("number  |  squared  |  cubed\n ------ | --------  | ----- ");
-                System.out.printf("%-8d| %-10d| %-8d ", t, squared, cubed);
-            } else {
-                System.out.printf("%n%-8d| %-10d| %-8d ", t, squared, cubed);
+        while(true){
+            System.out.println("What number would you like to go to?");
+            int usersNumber;
+            usersNumber = in.nextInt();
+            for(int t = 1; t <= usersNumber; t++){
+                int squared = t*t;
+                int cubed = t*t*t;
+                if(t == 1){
+                    System.out.println("Here is your table!\n");
+                    System.out.println("number  |  squared  |  cubed\n ------ | --------  | ----- ");
+                    System.out.printf("%-8d| %-10d| %-8d ", t, squared, cubed);
+                }  else {
+                    System.out.printf("%n%-8d| %-10d| %-8d ", t, squared, cubed);
+                }
+
+            }
+
+            System.out.println("\nWould you like to continue? [y/N]");
+            String usersInput;
+
+            usersInput = in.next().toLowerCase();
+            boolean decline = usersInput.equals("n");
+                if (decline) {
+                    break;
+                }
+
+        }
+
+        /*4) Convert a given number grades into letter grades
+        * Prompt the user for a numerical grade from 0 to 100
+        * Display the corresponding letter grade
+        * Prompt the user to continue
+        * Assume that the user will enter valid integers for the grades
+        * The application should only conitnue if the user agrees to
+        * Grade Ranges:
+        * A: 100-88
+        * B: 87-80
+        * C: 79-67
+        * D: 66-60
+        * F: 59-0
+        *
+        * */
+
+        while(true){
+            System.out.println("Please enter a numerical grade from 0 to 100");
+            int numberGrade;
+            numberGrade = in.nextInt();
+            if(numberGrade >= 88){
+                System.out.println("Congrats! You received an: A");
+            } else if (numberGrade >=80) {
+                System.out.println("Good Job! Your Grade is a: B");
+            } else if (numberGrade >= 67){
+                System.out.println("Can you try harder? Your Grade is a: C");
+            } else if (numberGrade >= 60){
+                System.out.println("Did you even try? Your Grade is a: D");
+            } else if (numberGrade >= 0){
+                System.out.println("You have failed :( Your Grade is an: F");
+            }
+
+            System.out.println("Would you like me to scrutinize more of your grades?");
+            String usersInput;
+            usersInput = in.next().toLowerCase();
+            boolean decline = usersInput.equals("n");
+            if (decline) {
+                break;
             }
         }
 
-
     }
+
 }
+
