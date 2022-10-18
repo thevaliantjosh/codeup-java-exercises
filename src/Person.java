@@ -15,17 +15,28 @@ public class Person {
     *
     * A constructor brings an instance into existence
     * */
-    public String firstName;//Instance variable
-    public  String lastName;//Instance variable
 
-    public String sayHello(){
-        return String.format("Hello from %s %s!", firstName, lastName);
+    private String name; // Instance property
+    public String getName(){
+        return name;
     }
 
-    public static void main(String[] args){
-        Person rick = new Person();
-        rick.firstName = "Rick";
-        rick.lastName = "Sanchez";
-        System.out.println(rick.sayHello());//Prints "Hello from Rick Sanchez!
+    public void setName(String name){
+        this.name = name;
     }
+    public Person(String name){
+        this.name = name;
+    }
+
+//    public static long worldPopulation = 7_500_000_000L;//Class Property
+
+    public void sayHello(){
+        System.out.printf("Hello my name is %s!%n", getName());
+    }
+
+//    public String sayHello(){
+//        return String.format("Hello from %s %s!", firstName, lastName);
+//    }
+
+
 }

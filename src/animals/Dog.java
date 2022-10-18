@@ -1,3 +1,5 @@
+package animals;
+
 public class Dog {
 
     /*"public" is an access (or visibility) modifier, we can call the dog class and its methods anywhere
