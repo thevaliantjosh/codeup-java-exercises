@@ -13,5 +13,7 @@ public class InputTest {
         System.out.printf("You nailed it! Your number was %.2f%n", input.getDouble(1.25, 50.55));
 
         System.out.printf("Your number was %.5f%n", input.getDouble());
+
+        System.out.println(input.getString("Enter your next item: "));
     }
 }

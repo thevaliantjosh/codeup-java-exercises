@@ -34,6 +34,13 @@ public class Input {
 
     }
 
+    public int getInt(){
+        int usersInput;
+        System.out.println("Please Enter a number :)");
+        usersInput = scanner.nextInt();
+        return usersInput;
+    }
+
     public int getInt(int min, int max) {
         int usersInput;
         do {
@@ -44,12 +51,7 @@ public class Input {
     }
 
 
-    public int getInt(){
-        int usersInput;
-        System.out.println("Please Enter a number :)");
-        usersInput = scanner.nextInt();
-        return usersInput;
-    }
+
 
     public double getDouble(double min, double max){
         double usersInput;
@@ -61,11 +63,25 @@ public class Input {
         return usersInput;
     }
 
+//    public double getDouble(){
+//        double usersInput;
+//        System.out.println("Please Enter a decimal number");
+//        usersInput = scanner.nextDouble();
+//        return usersInput;
+//    }
     public double getDouble(){
-        double usersInput;
-        System.out.println("Please Enter a decimal number");
-        usersInput = scanner.nextDouble();
-        return usersInput;
+        System.out.println("Enter a number: ");
+        return scanner.nextDouble();
+    }
+
+    public double getDouble(String prompt){
+        System.out.println(prompt);
+        return scanner.nextDouble();
+    }
+
+    public String getString(String prompt){
+        System.out.println(prompt);
+        return scanner.nextLine();
     }
 
     public Input(){

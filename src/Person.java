@@ -14,6 +14,10 @@ public class Person {
     * Objects have fields and methods, and are instantiated, i.e., created, with the "new" keyword.
     *
     * A constructor brings an instance into existence
+    *
+    * A constructor is a special method that is called when an object is created. A
+    * constructor has the same name as teh calss and does not define a return type.
+    * Constructors, like any other method, can accept arguments and be overloaded
     * */
 
     private String name; // Instance property
@@ -23,6 +27,12 @@ public class Person {
 
     public void setName(String name){
         this.name = name;
+    }
+
+    //Constructors
+
+    public Person(){//no arg constructor: Always create one of these
+
     }
     public Person(String name){
         this.name = name;
