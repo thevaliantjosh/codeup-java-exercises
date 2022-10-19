@@ -37,7 +37,6 @@ public class ArraysExercises {
 
         System.arraycopy(personArray, 0, newArrayOfPeople, 0, personArray.length);
         newArrayOfPeople[newArrayOfPeople.length -1] = newPerson;
-//        System.arraycopy(newPerson, 0, newArrayOfPeople, newArrayOfPeople.length -1, 0);
         return newArrayOfPeople;
     }
 }//End of Class
