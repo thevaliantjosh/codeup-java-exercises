@@ -38,6 +38,13 @@ public class Person {
         this.name = name;
     }
 
+    public String toString(){
+        return name;
+    }
+
+
+
+
 //    public static long worldPopulation = 7_500_000_000L;//Class Property
 
     public void sayHello(){
