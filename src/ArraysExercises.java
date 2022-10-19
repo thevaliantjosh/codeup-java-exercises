@@ -1,6 +1,28 @@
 import java.util.Arrays;
 
 public class ArraysExercises {
+    //In class demonstration of the addPerson Method
+//    public static Person[] addPerson(Person newPerson, Person[] PeopleArray){
+//        Person[] newPeopleArray;
+//        newPeopleArray = new Person[PeopleArray.length + 1];
+//        System.out.println(newPeopleArray);
+//        for (int i = 0; i < PeopleArray.length -1; i++){
+//            newPeopleArray[i] = PeopleArray[i];
+//        }
+//        System.out.println(Arrays.toString(newPeopleArray));
+//        newPeopleArray[newPeopleArray.length -1] = newPerson;
+//        return newPeopleArray;
+//    }
+
+    public static Person[] addPerson(Person[] personArray,  Person newPerson){
+
+        Person[] newArrayOfPeople = new Person[personArray.length + 1];
+
+        System.arraycopy(personArray, 0, newArrayOfPeople, 0, personArray.length);
+        newArrayOfPeople[newArrayOfPeople.length -1] = newPerson;
+        return newArrayOfPeople;
+    }
+
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5};
         System.out.println(numbers);//Will print out the hashcode of the array
@@ -21,22 +43,9 @@ public class ArraysExercises {
 
         System.out.println(Arrays.toString(addPerson(shawnOfTheDead, new Person("Peter Serafinowicz"))));
 
-//        Create a static method named addPerson. It should accept an array of Person objects, as well as a single person object to add to the passed array. It should return an array whose length is 1 greater than the passed array, with the passed person object at the end of the array.
-
-//        int[] combineNumbersArrays = new int[20];
-//        System.arraycopy(anArray, 0, combineNumbersArrays, 0, 10);
-//        System.out.println(combineNumbersArrays.length);
-//        System.out.println(Arrays.toString(combineNumbersArrays));
-
-
     }//End of main
 
-    public static Person[] addPerson(Person[] personArray,  Person newPerson){
 
-        Person[] newArrayOfPeople = new Person[personArray.length + 1];
 
-        System.arraycopy(personArray, 0, newArrayOfPeople, 0, personArray.length);
-        newArrayOfPeople[newArrayOfPeople.length -1] = newPerson;
-        return newArrayOfPeople;
-    }
+
 }//End of Class

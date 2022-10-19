@@ -36,7 +36,7 @@ public class Input {
 
     public int getInt(){
         int usersInput;
-        System.out.println("Please Enter a number :)");
+        System.out.println("Please Enter your choice: ");
         usersInput = scanner.nextInt();
         return usersInput;
     }
