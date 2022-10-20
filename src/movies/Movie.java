@@ -23,6 +23,10 @@ public class Movie {
         this.category = category;
     }
 
+    public String toString(){
+        return name;
+    }
+
     //Constructor
     public Movie(String name, String category) {
         this.name = name;

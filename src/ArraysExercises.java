@@ -43,6 +43,11 @@ public class ArraysExercises {
 
         System.out.println(Arrays.toString(addPerson(shawnOfTheDead, new Person("Peter Serafinowicz"))));
 
+        ServerNameGenerator newServer = new ServerNameGenerator();
+        System.out.println("Here is your server:");
+        System.out.println(newServer.getName());
+
+
     }//End of main
 
 
