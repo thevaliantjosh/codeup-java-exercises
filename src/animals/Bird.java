@@ -1,6 +1,6 @@
 package animals;
 
-public class Bird {
+abstract public class Bird {
     protected String name;
 
     public String getName() {

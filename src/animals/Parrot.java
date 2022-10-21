@@ -1,6 +1,6 @@
 package animals;
 
-public final class  Parrot extends Bird{
+public final class  Parrot extends Bird implements Pet{
 
     public final static String order = "Psittaciformes";
 
@@ -26,4 +26,8 @@ public final class  Parrot extends Bird{
         System.out.println("A new Parrot just got constructed");
     }
 
+    @Override
+    public void beCute() {
+        System.out.println("Human goes Awwwwww");
+    }
 }

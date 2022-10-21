@@ -66,6 +66,16 @@ public class BirdTest {
 
         System.out.println(argumentativeOrnithologist("Psittaciformes", "Sphenisciformes"));
 
+        parrot.beCute();
+
+        //After making the Bird Class abstract
+
+//        Bird crow = new Bird()//cannot be instantiated
+
+        Bird finch = new Finch();
+        finch.makeNoise();
+
+
 
     }
 

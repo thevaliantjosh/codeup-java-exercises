@@ -7,8 +7,7 @@ public class Square extends Rectangle{
     }
 
     public Square(int side){
-        super.setLength(side);
-        super.setWidth(side);
+        super(side, side);
     }
 
     //Methods
