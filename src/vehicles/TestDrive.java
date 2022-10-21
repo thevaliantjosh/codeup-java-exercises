@@ -24,8 +24,9 @@ public class TestDrive {
 
         Motorcycle ducati = new Motorcycle();
         ducati.setVehicle("Ducati");
-        System.out.printf("The %s says %s", ducati.getVehicle(), ducati.makeNoise());
+        System.out.printf("The %s says %s%n", ducati.getVehicle(), ducati.makeNoise());
 
+        ducati.breakDown();
 
 
 

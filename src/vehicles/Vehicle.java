@@ -11,6 +11,20 @@ public class Vehicle {
         this.vehicle = vehicle;
     }
 
+    //Constructor
+
+    public Vehicle(){
+
+    }
+
+    public Vehicle(String vehicle){
+        this.vehicle = vehicle;
+    }
+
+    public void alarmSound(){
+        System.out.println("Wooooo Wooooo Wooooo");
+    }
+
     public String makeNoise(){
         return "vroom vroom";
     }
