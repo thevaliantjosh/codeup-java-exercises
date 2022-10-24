@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class CollectionsLecture {
+public class ArrayListsLecture {
     public static void main(String[] args) {
         ArrayList<Monster> monsterArrayList = new ArrayList<>();
 
@@ -72,6 +72,8 @@ public class CollectionsLecture {
         ArrayList<Integer> myNumbers = new ArrayList<>(List.of(5, 9, 34, -67, 98, 23));
 
         System.out.println(myNumbers);
+
+        //Sorting an ArrayList with Collections.sort().
         Collections.sort(myNumbers);
         System.out.println(myNumbers);
 
@@ -79,6 +81,10 @@ public class CollectionsLecture {
 
         ArrayList<String> randomWords = new ArrayList<>(List.of("version", "suntan", "bond", "defeat", "later", "rate"));
         System.out.println(randomWords);
+
+        //We can use Collections.sort to sort arrayLists that contain numbers or strings
+        //The will be sorted in ascending "natural" order
+
         Collections.sort(randomWords);
         System.out.println(randomWords);
 
@@ -86,12 +92,21 @@ public class CollectionsLecture {
         //Comparator is a set of instructions on how to compare
         //.comparing uses a method to an object
         //works on any getter
+        //Comparing Monsters by hitPoints, uses Monster::getHitPoints
         monsterArrayList.sort(Comparator.comparing(Monster::getHitPoints));
         System.out.println(monsterArrayList);
 
         //Ordering from highest hitPoints to the lowest
         System.out.println(monsterArrayList);
 //        monsterArrayList.sort(Collections.reverseOrder());
+        System.out.println(monsterArrayList);
+
+        //If I want to sort custom objects by properties in reverse order
+
+        //To use the compare() method that we wrote in the Monster class
+        //Use the sort method and pass it a no-arg constructor
+
+        monsterArrayList.sort(new Monster());
         System.out.println(monsterArrayList);
 
     }//End of Main
