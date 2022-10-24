@@ -21,9 +21,15 @@ public class ShapesTest {
         System.out.println("The perimeter of myShape2 is: " + myShape2.getPerimeter());
 
         //Calling the Widths and lengths for each shape
+        //The getLength method needs to be in the Measurable Interface
+        //Because we stored the Variable of myShape in the Data type of Measurable, which is an Interface
 
-        System.out.println(myShape.getLength());
-        System.out.println(myShape.getWidth());
+        Square newSquare =(Square) myShape2;
+        System.out.println(newSquare.getLength());
+
+
+//        System.out.println(myShape.getLength());
+//        System.out.println(myShape.getWidth());
 
     }
 }
