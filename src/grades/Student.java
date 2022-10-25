@@ -14,12 +14,15 @@ public class Student {
         this.name = name;
     }
 
-    //Adds the given grad to the grades property
+    //Adds the given grade to the grades property
     public void addGrade(int grade){
         grades.add(grade);
     }
 
-
+    //Getter for Grades
+    public ArrayList<Integer> getGrades(){
+        return grades;
+    }
 
 
     //return the average of the students grades
