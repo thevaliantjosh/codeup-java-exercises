@@ -57,10 +57,11 @@ public class GradesApplication {
         System.out.println("Welcome!\n");
         System.out.println("Here are the GitHub usernames of our students: \n");
 
-        System.out.println(stringStudentMap.get("wigOnAPig").getGrades());
+//        System.out.println(stringStudentMap.get("wigOnAPig").getGrades());
 
 
         String userInput = "";
+
 
         while(!userInput.startsWith("n")){
             for(String userName : studentUserNames){
@@ -111,8 +112,7 @@ public class GradesApplication {
                 break;
                 case "3":
                 System.out.println("You clicked 3");
-                default:
-                    System.out.println("\t1: See all student Grades\n\t2: View Class Average\n\t3: View csv Report");
+
             }
 
         }//End of While loop

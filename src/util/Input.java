@@ -24,15 +24,16 @@ public class Input {
 
     public boolean yesNo(){
         System.out.println("Confirm: [yes/No]");
-        String usersInput = scanner.next().toLowerCase();
-        boolean decline = usersInput.startsWith("n");
-        if (decline){
-            return false;
-        } else {
-            return true;
-        }
-
+        String usersInput = scanner.nextLine();
+        return usersInput.equalsIgnoreCase("y") || usersInput.equalsIgnoreCase("yes");
     }
+    public boolean yesNo(String prompt){
+        System.out.println(prompt);
+        String usersInput = scanner.nextLine();
+        return usersInput.equalsIgnoreCase("y") || usersInput.equalsIgnoreCase("yes");
+    }
+
+
 
     public int getInt(){
         int usersInput;
