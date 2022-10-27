@@ -10,44 +10,35 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FileIOPractice {
-    private static void addPeople(Path pathToAppend, List<String> newArrayList){
+    private static final Path peoplePath = Paths.get("src", "files_io", "people.txt");
+
+    private static void addPeople(List<String> newArrayList){
         try {
-            Files.write(pathToAppend, newArrayList, StandardOpenOption.APPEND);
+            Files.write(peoplePath, newArrayList, StandardOpenOption.APPEND);
         } catch(IOException e) {
             e.printStackTrace();
         }
     }
-    public static void main(String[] args) {
-//        ================================= FILE IO MINI-EXERCISE
-//
-//                - create a class called `FileIoPractice` with a main method
-//
-//        - add a `fileIo` folder to the root of your codeup-java-exercises project.
-//
-//                - within this folder, add a text file, `people.txt`.
-//
-//        - add the following contents to the file:
-//
-//        Justin
-//                Javier
-//        Jason
-//                Laura
-//
-//        - write code in the main method that prints the following messages:
-//
-//        "Justin works at Codeup."
-//        "Javier works at Codeup."
-//        "Jason works at Codeup."
-//        "Laura works at Codeup."
-//
-//                - create an array list of first names of four other people in your cohort
-//
-//                - add code to your main method that replaces the contents of `people.txt` with your classmates by writing to the file
-//
-//        - BONUS: create a static method, `deleteEntry`, that takes in the name of someone (a string) and when invoked, rewrites a new list to the `people.txt` file
-//        with all entries except the passed in name
+    private static List<String> readFile() {
+        List<String> names = null;
+        try {
+            names = Files.readAllLines(peoplePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return names;
+    }
 
-        Path peoplePath = Paths.get("src", "files_io", "people.txt");
+    private static void deleteName(String nameToDelete) {
+        List<String> updatedNames = new ArrayList<>();
+        for (String name : readFile()) {
+            if (!name.equalsIgnoreCase(nameToDelete)) {
+                updatedNames.add(name);
+            }
+        }
+        addPeople(updatedNames);
+    }
+    public static void main(String[] args) {
 
         List<String> allThePeople = new ArrayList<>();
 
@@ -60,8 +51,13 @@ public class FileIOPractice {
 
         System.out.println(allThePeople);
 
-        for(String person : allThePeople){
-            System.out.printf("%s works at Codeup%n", person);
+        for(int i = 0; i < allThePeople.size(); i++){
+            if (i > allThePeople.indexOf("Stephen")){
+                System.out.printf("%s Works at Codeup%n", allThePeople.get(i));
+            } else{
+                System.out.printf("%s attends Codeup%n", allThePeople.get(i));
+            }
+
         }
 
         List<String> morePeople = new ArrayList<>();
@@ -77,6 +73,16 @@ public class FileIOPractice {
             e.printStackTrace();
         }
 
+        List<String> evenMorePeople = Arrays.asList("Joshua", "Justin", "Jason", "Trevor", "Gonzalo");
+
+        addPeople(evenMorePeople);
+
+        readFile();
+
+        deleteName("Joshua");
+
+
+
 
 
 
@@ -88,11 +94,64 @@ public class FileIOPractice {
 ////            e.printStackTrace();
 ////        }
 
+//
+//        private final static Path PATH = Paths.get("fileIo", "people.txt");
+//
+//        // Read people.txt
+//        private static List<String> readLines() {
+//            List<String> names;
+//            try {
+//                names = Files.readAllLines(PATH);
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            return names;
+//        }
+//
+//        private static void greetNames() {
+//            for (String name : readLines()) {
+//                System.out.printf("%s works at Codeup.%n", name);
+//            }
+//        }
+//
+//        private static void writeLines(List<String> lines) {
+//            try {
+//                Files.write(PATH, lines);
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }
+//
+//
+//        public static void main(String[] args) {
+//
+//            // greet names
+////        greetNames();
+////        System.out.println("==================");
+//
+//            // write to file and replace names...
+////        List<String> newNames = Arrays.asList("Cody", "Nikki", "Jordy", "Jay");
+////        writeLines(newNames);
+////        greetNames();
+//
+//            // delete name from list...
+//            deleteName("Jordy");
+//            greetNames();
+//
+//        }
+//
+//
+//        private static void deleteName(String nameToDelete) {
+//            List<String> updatedNames = new ArrayList<>();
+//            for (String name : readLines()) {
+//                if (!name.equalsIgnoreCase(nameToDelete)) {
+//                    updatedNames.add(name);
+//                }
+//            }
+//            writeLines(updatedNames);
 
 
 
+        }//End of Main
 
-
-
-    }
-}
+    }//End of Class
